@@ -3,7 +3,7 @@
 Prepared for: DBMS Project Prepared by:
 Praveen T 
 Ravi Balaji A J 
-Sirish C
+Sirish C Tops
 5 July 2018
 
 Civil Registry System is the online system which helps citizens to apply passport, licence, PAN-card etc. and register birth and death certificates.
