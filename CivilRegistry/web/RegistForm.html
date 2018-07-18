@@ -6,15 +6,15 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Civil Registry</title>
+        <title>Registry</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         <style>
                   div.box{
                 position: absolute;
-                right: 35px;
-                top: 50%;
+                right: 33%;
+                top:15%;               
                 
                 border-radius: 10px; 
                 padding:0px 45px 20px 30px;
@@ -93,12 +93,17 @@ and open the template in the editor.
         <div class="box">
            <center><h1>LOGIN</h1></center>
             <form action="/CivilRegistry/LoginServlet" method="Post">
-                <b>USERNAME:<b>
-                        <input type="text" name="username" placeholder="USERNAME" ><br>
-                PASSWORD:
+                <b>FIRST NAME :<b>
+                        <input type="text" name="fname" placeholder="First Name" ><br>
+                <b>LAST NAME :<b>       
+                        <input type="text" name="lname" placeholder="Last Name" ><br>
+                <b>E-MAIL ID :<b>
+                    <input type="email" name="email" placeholder="Example@gmail.com" ><br>
+                <b>USERNAME :<b>
+                    <input type="text" name="uname" placeholder="Username" ><br>    
+                <b>PASSWORD:<b>
                 <input type="password" name="password" placeholder="*******"><br>
-                <button class="button"><span>Sign in . . . </span></button><br>
-                <a href="/CivilRegistry/RegistForm.html">Create a new Login ...</a>                               
+                <button class="button"><span>Register </span></button><br>                                             
                 
             </form>
         </div>
