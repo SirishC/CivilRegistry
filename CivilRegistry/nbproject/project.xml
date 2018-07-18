@@ -7,15 +7,17 @@
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
                 <library dirs="200">
-                    <file>${file.reference.mongo-java-driver-3.8.0-sources.jar}</file>
+                    <file>${file.reference.mongo.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.mongo-java-driver-3.8.0.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.mongodb-driver-3.8.0.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.mongo-java-driver-2.13.3.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.mongodb-driver-3.8.0.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

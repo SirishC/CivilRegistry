@@ -10,94 +10,20 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <style>
-                  div.box{
-                position: absolute;
-                right: 35px;
-                top: 50%;
-                
-                border-radius: 10px; 
-                padding:0px 45px 20px 30px;
-                width:30%;
-                
-                box-shadow: 10px 10px 5px rgba(100,50,90,0.5);
-                background-color: rgba(227,151,94,0.7);
-                font-family: 'Quicksand', sans-serif;
+        <link rel="stylesheet" type="text/css" href="loginandreg.css" media="all" />
 
-            }
-            form{
-            }
-            body  {
-                 background-image:url("login.jpg");
-                 background-size:100%;
-                }
-            input
-                 {
-                  width: 100%;
-                  padding: 12px;
-                  border: none;
-                  border-radius: 4px;
-                  margin: 5px 0;
-                  background-color: rgba(225,225,225,0.2);
-                  display: inline-block;
-                  font-size: 20px;
-                  line-height: 20px;
-                  opacity: 1;
-                  font-family:'Quicksand', sans-serif;/* remove underline from anchors */
-                } 
-               
-                .button {
-                 border-radius: 4px;
-                 background-color:rgba(94,49,83,0.8);
-                 border: none;
-                 color: #FFFFFF;
-                 text-align: center;
-                font-family: 'Quicksand', sans-serif;
-                 
-                 font-size: 28px;
-                 padding: 10px;
-                 width: 200px;
-                 transition: all 0.5s;
-                 cursor: pointer;
-                 margin: 5px;
-               }
-
-               .button span {
-                 cursor: pointer;
-                 display: inline-block;
-                 position: relative;
-                 transition: 0.5s;
-               }
-
-               .button span:after {
-                 content: '\00bb';
-                 position: absolute;
-                 opacity: 0;
-                 top: 0;
-                 right: -20px;
-                 transition: 0.5s;
-               }
-
-               .button:hover span {
-                 padding-right: 25px;
-               }
-
-               .button:hover span:after {
-                 opacity:1;
-                 right: 0;
-               }
-               
-        </style>
+        
     </head>
     <body>
         <div class="box">
            <center><h1>LOGIN</h1></center>
             <form action="/CivilRegistry/LoginServlet" method="Post">
                 <b>USERNAME:<b>
-                        <input type="text" name="username" placeholder="USERNAME" ><br>
+                        <input class="regbox" type="text" name="username" placeholder="USERNAME" ><br>
                 PASSWORD:
-                <input type="password" name="password" placeholder="*******"><br>
-                <button class="button"><span>Sign in . . . </span></button>
+                <input class="regbox" type="password" name="password" placeholder="*******"><br>
+                <button class="button"><span>Sign in . . . </span></button><br>
+                <a class="createanaccount" href="/CivilRegistry/RegistForm.html">Create a new Login ...</a>                               
                 
             </form>
         </div>
