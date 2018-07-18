@@ -14,14 +14,14 @@ and open the template in the editor.
                   div.box{
                 position: absolute;
                 right: 35px;
-                top: 40%;
+                top: 50%;
                 
                 border-radius: 10px; 
                 padding:0px 45px 20px 30px;
-                width: 30%;
+                width:30%;
                 
                 box-shadow: 10px 10px 5px rgba(100,50,90,0.5);
-                background-color: rgba(227,151,94,0.5);
+                background-color: rgba(227,151,94,0.7);
                 font-family: 'Quicksand', sans-serif;
 
             }
@@ -31,8 +31,8 @@ and open the template in the editor.
                  background-image:url("login.jpg");
                  background-size:100%;
                 }
-            input,
-                .btn {
+            input
+                 {
                   width: 100%;
                   padding: 12px;
                   border: none;
@@ -40,14 +40,12 @@ and open the template in the editor.
                   margin: 5px 0;
                   background-color: rgba(225,225,225,0.2);
                   display: inline-block;
-                  font-size: 17px;
+                  font-size: 20px;
                   line-height: 20px;
-                  text-decoration: none; /* remove underline from anchors */
-                }
-                input:hover,
-                .btn:hover {
-                  opacity: 0.5;
-                 }
+                  opacity: 1;
+                  font-family:'Quicksand', sans-serif;/* remove underline from anchors */
+                } 
+               
                 .button {
                  border-radius: 4px;
                  background-color:rgba(94,49,83,0.8);
@@ -94,12 +92,13 @@ and open the template in the editor.
     <body>
         <div class="box">
            <center><h1>LOGIN</h1></center>
-            <form>
-                USERNAME:
-                <input type="text" name="username" placeholder="USERNAME"><br>
+            <form action="/CivilRegistry/LoginServlet" method="Post">
+                <b>USERNAME:<b>
+                        <input type="text" name="username" placeholder="USERNAME" ><br>
                 PASSWORD:
                 <input type="password" name="password" placeholder="*******"><br>
                 <button class="button"><span>Sign in . . . </span></button>
+                
             </form>
         </div>
     </body>
