@@ -15,13 +15,13 @@ and open the template in the editor.
         
     </head>
     <body>
-        <div class="box">
+        <div class="loginbox">
            <center><h1>LOGIN</h1></center>
-            <form action="/CivilRegistry/LoginServlet" method="Post">
+           <form action="/CivilRegistry/LoginServlet" method="Post" autocomplete="on">
                 <b>USERNAME:<b>
-                        <input class="regbox" type="text" name="username" placeholder="USERNAME" ><br>
+                 <input class="loginbox" type="text" name="username" required placeholder="USERNAME"  pattern="[a-c]{1,15}" title="Username should only contain lowercase letters. e.g. john" ><br>
                 PASSWORD:
-                <input class="regbox" type="password" name="password" placeholder="*******"><br>
+                <input class="loginbox" type="password" name="password" placeholder="*******" required><br>
                 <button class="button"><span>Sign in . . . </span></button><br>
                 <a class="createanaccount" href="/CivilRegistry/RegistForm.html">Create a new Login ...</a>                               
                 

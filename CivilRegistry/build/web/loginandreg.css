@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : 18 Jul, 2018, 11:07:48 PM
     Author     : Ravibalg
 */
-                  div.box{
+                  div.loginbox{
                 position: absolute;
                 right: 35px;
                 top: 50%;
@@ -21,7 +21,7 @@ and open the template in the editor.
                 font-family: 'Quicksand', sans-serif;
             }
             
-            div.regbox{
+            div.regbox,div.birthbox{
                 position: absolute;
                 right: 33%;
                 top: 25%;
@@ -40,7 +40,7 @@ and open the template in the editor.
                  background-image:url("login.jpg");
                  background-size:100%;
                 }
-            input.regbox
+            input.regbox,input.loginbox,div.birthbox
                  {
                   width: 100%;
                   padding: 12px;
@@ -99,5 +99,10 @@ and open the template in the editor.
                    color:rgba(0,0,0,1);
                    text-decoration:none;
                    font-size: 20px;
+               }
+               
+               .regradio{
+                   padding-top: 20px;
+                   padding-right:100px
                }
 
