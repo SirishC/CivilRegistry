@@ -2,7 +2,7 @@
 
 Prepared for: DBMS Project Prepared by:
 - Praveen T 
-- Ravi Balaji A J ''' Topper '''
+- Ravi Balaji A J. ' Topper '
 - Sirish C 
 
  5 July 2018
