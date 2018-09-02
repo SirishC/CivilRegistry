@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Civil Registry</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="loginandreg.css" media="all" />
+
+        
+    </head>
+    <body>
+        <div class="loginbox">
+           <center><h1>LOGIN</h1></center>
+           <form action="/CivilRegistry/LoginServlet" method="Post" autocomplete="on">
+                <b>USERNAME:<b>
+                 <input class="loginbox" type="text" name="username" required placeholder="USERNAME"  pattern="[a-c]{1,15}" title="Username should only contain lowercase letters. e.g. john" ><br>
+                PASSWORD:
+                <input class="loginbox" type="password" name="password" placeholder="*******" required><br>
+                <button class="button"><span>Sign in . . . </span></button><br>
+                <a class="createanaccount" href="/CivilRegistry/RegistForm.html">Create a new Login ...</a>                               
+                
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registry</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="loginandreg.css" media="all" />
+
+       
+    </head>
+    <body>
+        <div class="regbox">
+           <center><h1>SIGN-UP!</h1></center>
+           <form action="/CivilRegistry/LoginServlet" method="Post" autocomplete="on">
+                <b>FIRST NAME :<b>
+                        <input class="regbox" type="text" name="fname" placeholder="First Name" required><br>
+                <b>LAST NAME :<b>       
+                        <input class="regbox" type="text" name="lname" placeholder="Last Name" ><br>
+                <b>E-MAIL ID :<b>
+                    <input class="regbox" type="email" name="email" placeholder="example@gmail.com" required><br>
+                <b>GENDER :<b><br>
+                        
+                        <input  type="radio" name="gender" value="male" checked><label class="regradio" for="male">Male</label>
+                        <input  type="radio" name="gender" value="female"><label class="regradio" for="female">Female</label>
+                        <input  type="radio" name="gender" value="other"><label class="regradio" for="other">Other</label>
+                        <br>
+                <b>PASSWORD :<b>
+                    <input class="regbox" type="password" name="password" placeholder="*******" required><br>    
+                <b>CONFIRM PASSWORD:<b>
+                <input class="regbox" type="password" name="cnf_password" placeholder="*******" required><br>
+                <button class="button"><span>Register </span></button><br>                                             
+                
+            </form>
+        </div>
+    </body>
+</html>

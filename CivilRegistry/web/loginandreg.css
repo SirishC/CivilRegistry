@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23 Jul, 2018, 11:15:35 PM
+    Author     : sirish
+*/
+
+/* 
+    Created on : 18 Jul, 2018, 11:07:48 PM
+    Author     : Ravibalg
+*/
+                  div.loginbox{
+                position: absolute;
+                right: 35px;
+                top: 50%;
+                
+                border-radius: 10px; 
+                padding:0px 45px 20px 30px;
+                width:30%;
+                
+                box-shadow: 10px 10px 5px rgba(100,50,90,0.5);
+                background-color: rgba(227,151,94,0.7);
+                font-family: 'Quicksand', sans-serif;
+            }
+            
+            div.regbox,div.birthbox{
+                position: absolute;
+                right: 33%;
+                top: 25%;
+                
+                border-radius: 10px; 
+                padding:0px 45px 20px 30px;
+                width:30%;
+                
+                box-shadow: 10px 10px 5px rgba(100,50,90,0.5);
+                background-color: rgba(227,151,94,0.7);
+                font-family: 'Quicksand', sans-serif;
+            }
+            
+            
+            body    {
+                 background-image:url("login.jpg");
+                 background-size:100%;
+                }
+            input.regbox,input.loginbox,div.birthbox
+                 {
+                  width: 100%;
+                  padding: 12px;
+                  border: none;
+                  border-radius: 4px;
+                  margin: 5px 0;
+                  background-color: rgba(225,225,225,0.2);
+                  display: inline-block;
+                  font-size: 20px;
+                  line-height: 20px;
+                  opacity: 1;
+                  font-family:'Quicksand', sans-serif;/* remove underline from anchors */
+                } 
+               
+                .button {
+                 border-radius: 2px;
+                 background-color:rgba(94,49,83,0.8);
+                 border: none;
+                 color: #FFFFFF;
+                 text-align: center;
+                font-family: 'Quicksand', sans-serif;
+                 
+                 font-size: 20px;
+                 padding: 10px;
+                 width: 200px;
+                 transition: all 0.5s;
+                 cursor: pointer;
+                 margin: 5px;
+               }
+
+               .button span {
+                 cursor: pointer;
+                 display: inline-block;
+                 position: relative;
+                 transition: 0.5s;
+               }
+
+               .button span:after {
+                 content: '\00bb';
+                 position: absolute;
+                 opacity: 0;
+                 top: 0;
+                 right: -20px;
+                 transition: 0.5s;
+               }
+
+               .button:hover span {
+                 padding-right: 25px;
+               }
+
+               .button:hover span:after {
+                 opacity:1;
+                 right: 0;
+               }
+               a.createanaccount{
+                   color:rgba(0,0,0,1);
+                   text-decoration:none;
+                   font-size: 20px;
+               }
+               
+               .regradio{
+                   padding-top: 20px;
+                   padding-right:100px
+               }
+
