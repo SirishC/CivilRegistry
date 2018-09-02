@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:500);
+* {
+  margin:0px;
+  padding:0px;
+}
+#mainNavBtn {
+  position:absolute;
+  top:100px;
+  right:50px;
+  width:190px;
+  height:46px;
+  background:#181d20;
+  cursor:pointer;
+  -webkit-transform: translateZ(0);
+}
+#mainNavBtn:hover {
+  background-position:0px 0px;
+}
+.BtnBg {
+  position:absolute;
+  width:0px;
+  height:46px;
+  top:0;
+  left:0;
+  background:#881c2f;
+  opacity:0;
+  -webkit-transition:opacity 1s, width 0.4s;
+  -moz-transition:   opacity 1s, width 0.4s;
+  transition:        opacity 1s, width 0.4s;
+}
+.BtnBorders {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:transparent;
+}
+.BtnBorders:before, .BtnBorders:after {
+  content:'';
+  position:absolute;
+  top:0px;
+  display:block;
+  height:100%;
+  width:1px;
+  background:rgba(255,255,255,0.7);
+}
+.BtnBorders:before {
+  left:0px;
+  -webkit-transition:height 0.1s;
+  -moz-transition:   height 0.1s;
+  transition:        height 0.1s;
+}
+.BtnBorders:after {
+  right:0px;
+  -webkit-transition:height 0.1s 0.2s;
+  -moz-transition:   height 0.1s 0.2s;
+  transition:        height 0.1s 0.2s;
+}
+#mainNavBtn:hover > .BtnBorders:before {
+  height:0%;
+  -webkit-transition:height 0.1s 0.2s;
+  -moz-transition:   height 0.1s 0.2s;
+  transition:        height 0.1s 0.2s;
+}
+#mainNavBtn:hover > .BtnBorders:after {
+  height:0%;
+  -webkit-transition:height 0.1s;
+  -moz-transition:   height 0.1s;
+  transition:        height 0.1s;
+}
+#mainNavBtn:hover > .BtnBg {
+  width:190px;
+  opacity:0.9;
+}
+#mainNavBtn:before, #mainNavBtn:after  {
+  content:'';
+  position:absolute;
+  left:-12px;
+  top:0px;
+  width:9px;
+  height:46px;
+  background-size:9px 9px;
+  background-position:0% 0%;
+  background-repeat:repeat-y;
+}
+#mainNavBtn:before {
+    background-image: -webkit-linear-gradient(45deg, #4a4b4b 0px, #4a4b4b 1px, transparent 2px, #4a4b4b 3px, #4a4b4b 4px, transparent 5px, #4a4b4b 6px, #4a4b4b 7px, transparent 8px, #4a4b4b 9px, #4a4b4b 10px, transparent 11px);
+  background-image: -moz-linear-gradient(45deg, #4a4b4b 0px, #4a4b4b 1px, transparent 2px, #4a4b4b 3px, #4a4b4b 4px, transparent 5px, #4a4b4b 6px, #4a4b4b 7px, transparent 8px, #4a4b4b 9px, #4a4b4b 10px, transparent 11px);
+  background-image: linear-gradient(45deg, #4a4b4b 0px, #4a4b4b 1px, transparent 2px, #4a4b4b 3px, #4a4b4b 4px, transparent 5px, #4a4b4b 6px, #4a4b4b 7px, transparent 8px, #4a4b4b 9px, #4a4b4b 10px, transparent 11px);
+  opacity:1;
+  -webkit-transition:all 0.4s;
+  -moz-transition:   all 0.4s;
+  transition:        all 0.4s;
+}
+#mainNavBtn:after {
+  background-image: -webkit-linear-gradient(45deg, #881c2f 0px, #881c2f 1px, transparent 2px, #881c2f 3px, #881c2f 4px, transparent 5px, #881c2f 6px, #881c2f 7px, transparent 8px, #881c2f 9px, #881c2f 10px, transparent 11px);
+  background-image: -moz-linear-gradient(45deg, #881c2f 0px, #881c2f 1px, transparent 2px, #881c2f 3px, #881c2f 4px, transparent 5px, #881c2f 6px, #881c2f 7px, transparent 8px, #881c2f 9px, #881c2f 10px, transparent 11px);
+  background-image: linear-gradient(45deg, #881c2f 0px, #881c2f 1px, transparent 2px, #881c2f 3px, #881c2f 4px, transparent 5px, #881c2f 6px, #881c2f 7px, transparent 8px, #881c2f 9px, #881c2f 10px, transparent 11px);
+  opacity:0;
+  -webkit-transition:all 0.4s;
+  -moz-transition:   all 0.4s;
+  transition:        all 0.4s;
+}
+#mainNavBtn:hover::before {
+  opacity:0;
+  background-position:0% -40%;
+}
+#mainNavBtn:hover::after {
+  opacity:1;
+  background-position:0% -40%;
+}
+.BtnInner {
+    display:block;
+  text-transform:uppercase;    
+    font-family: 'Dosis', sans-serif;
+  font-size:16px;
+  line-height:20px;
+  color:white;
+  position:relative;
+  display:block;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:   border-box;
+  box-sizing:        border-box;
+  width:100%;
+  height:100%;
+  padding-left:10px;
+  padding-top:20px;
+  -webkit-transition:padding 0.1s;
+  -moz-transition:   padding 0.1s;
+  transition:        padding 0.1s;
+  
+}
+.BtnInner:before, .BtnInner:after {
+  content:'';
+  position:absolute;
+  left:0px;
+  display:block;
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,0.7);
+}
+.BtnInner:before  {
+  top:0px;
+  -webkit-transition:width 0.2s;
+  -moz-transition:   width 0.2s;
+  transition:        width 0.2s;
+}
+.BtnInner:after {
+  bottom:0px;
+  -webkit-transition:width 0.2s 0.1s;
+  -moz-transition:   width 0.2s 0.1s;
+  transition:        width 0.2s 0.1s;
+}
+#mainNavBtn:hover > .BtnInner {
+  padding-left:20px;
+}
+#mainNavBtn:hover > .BtnInner:before {
+  width:0%;
+  -webkit-transition:width 0.2s 0.1s;
+  -moz-transition:   width 0.2s 0.1s;
+  transition:        width 0.2s 0.1s;
+}
+#mainNavBtn:hover > .BtnInner:after {
+  width:0%;
+  -webkit-transition:width 0.2s;
+  -moz-transition:   width 0.2s;
+  transition:        width 0.2s;
+}
+.supheader, .header {
+  display:block;
+  text-transform:uppercase;
+}
+.supheader {
+  font-family:"ocr a std", "Lucida Console", "Courier New", monospace;
+  font-size:10px;
+  line-height:12px;
+  color:#5e5e5e;
+  padding-top:9px;
+}
+.header {
+  font-family: 'Dosis', sans-serif;
+  font-size:16px;
+  line-height:20px;
+  color:white;
+}
+body {
+  background:url('https://dl.dropboxusercontent.com/u/330966/static/bg_image.jpg') center center #15171e;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+html, body {
+  width:100%;
+  height:100%;
+}
+
+.name{
+    position:absolute;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 300%;
+    color: whitesmoke;
+    top:100px;            
+  height:46px;  
+  cursor:pointer;  
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 190px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+

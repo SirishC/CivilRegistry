@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Civil Register System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">           
+        <link rel="stylesheet" type="text/css" href="frontpage.css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    </head>
+    <body>
+        <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.BtnInner')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+        <p class="name">Civil Registry System</p>
+        <div id="mainNavBtn">
+  <div class="BtnBg"></div>
+  <div  class="BtnBorders"></div>
+  <span  onclick="myFunction()" class="BtnInner">      
+    main menu    
+  </span>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+    </body>
+</html>
