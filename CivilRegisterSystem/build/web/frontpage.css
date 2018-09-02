@@ -165,27 +165,13 @@
   -moz-transition:   width 0.2s;
   transition:        width 0.2s;
 }
-.supheader, .header {
-  display:block;
-  text-transform:uppercase;
-}
-.supheader {
-  font-family:"ocr a std", "Lucida Console", "Courier New", monospace;
-  font-size:10px;
-  line-height:12px;
-  color:#5e5e5e;
-  padding-top:9px;
-}
-.header {
-  font-family: 'Dosis', sans-serif;
-  font-size:16px;
-  line-height:20px;
-  color:white;
-}
+
 body {
   background:url('https://dl.dropboxusercontent.com/u/330966/static/bg_image.jpg') center center #15171e;
   background-size:cover;
   background-repeat:no-repeat;
+  background: 
+		linear-gradient(rgba(0, 0, 0,1),rgba(115,39,47,1));
 }
 html, body {
   width:100%;
@@ -206,7 +192,7 @@ html, body {
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-block;    
 }
 
 .dropdown-content {
@@ -224,6 +210,8 @@ html, body {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family: 'Nanum Gothic', sans-serif;
+    
 }
 
 .dropdown a:hover {background-color: #ddd;}
