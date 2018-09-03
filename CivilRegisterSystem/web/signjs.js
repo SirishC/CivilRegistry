@@ -12,7 +12,32 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function(){
-	if(animating) return false;
+ var pass = document.getElementById("pass").value;
+      var re = /^(([^<>()\[\]\\.,;:\s@“]+(\.[^<>()\[\]\\.,;:\s@“]+)*)|(“.+“))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if(!re.test(document.getElementById("email").value)){
+           document.getElementById("alertpass").innerHTML = "Enter a Valid Email :(";
+        return false;
+       }
+       if(pass.length < 8){
+           document.getElementById("alertpass").innerHTML = "Password length > 8!";
+           return false;}
+
+       if (document.getElementById("pass").value !==
+               document.getElementById("cpass").value) {
+               document.getElementById("alertpass").innerHTML = "Password do not match!";
+               return false;}
+           
+        if (document.getElementById('gender').checked) {            
+            document.getElementById("alertpass1").innerHTML = "Not checked!";
+            }
+
+    
+    document.getElementById("alertpass").innerHTML = "";
+    document.getElementById("alertpass1").innerHTML = "";
+    
+    
+    if(animating) return false;
 	animating = true;
 	
 	current_fs = $(this).parent();
@@ -47,6 +72,7 @@ $(".next").click(function(){
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
+        
 });
 
 $(".previous").click(function(){
@@ -83,8 +109,3 @@ $(".previous").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
-
-$(".submit").click(function(){
-	return false;
-})
-

@@ -13,28 +13,7 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     </head>
     <body>
-        <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.BtnInner')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+        <script src="frontjs.js"></script>
         <p class="name">Civil Registry System</p>
         <div id="mainNavBtn">
   <div class="BtnBg"></div>
@@ -43,9 +22,9 @@ window.onclick = function(event) {
     main menu    
   </span>
   <div id="myDropdown" class="dropdown-content">
-    <a href="/CivilRegisterSystem/signup.jsp">Sign Up !</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="/CivilRegisterSystem/signup.jsp">Sign In! </a>
+    <a href="/CivilRegisterSystem/login.jsp">Login</a>
+    <a href="/CivilRegisterSystem/contact.html">Contact</a>
   </div>
 </div>
     </body>
