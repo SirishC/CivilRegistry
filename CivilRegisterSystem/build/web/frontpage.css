@@ -192,7 +192,8 @@ html, body {
 
 .dropdown {
     position: relative;
-    display: inline-block;    
+    display: inline-block; 
+    transition: all 300ms linear;
 }
 
 .dropdown-content {

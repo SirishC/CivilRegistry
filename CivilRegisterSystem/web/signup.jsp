@@ -19,14 +19,14 @@
     <body>
        
      
-        <h1>Ravi Balaji Topper !!<h1>
+        <h1s style="color: white">Ravi Balaji Topper !!<h1>
         <!-- multistep form -->
 <form id="msform">
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Account Setup</li>
-    <li>Social Profiles</li>
     <li>Personal Details</li>
+    <li>Contact Details</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
@@ -38,24 +38,66 @@
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <h2 class="fs-title">Social Profiles</h2>
-    <h3 class="fs-subtitle">Your presence on the social network</h3>
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>
-  <fieldset>
     <h2 class="fs-title">Personal Details</h2>
     <h3 class="fs-subtitle">We will never sell it</h3>
     <input type="text" name="fname" placeholder="First Name" />
-    <input type="text" name="lname" placeholder="Last Name" />
-    <input type="text" name="phone" placeholder="Phone" />
-    <textarea name="address" placeholder="Address"></textarea>
+    <input type="text" name="lname" placeholder="Last Name" />     
+
+    
+    <h4 class="fs-subtitle">Gender</h4>
+<!-- First Radio Button -->
+<label class="radio-container"> <!-- Wrapper for all elements -->
+  <input type="radio" name="gender" value="female"> <!-- Radio Button -->
+  
+  <div class="custom-check" style="margin-left: 100px;"> <!-- Custom Radio button style is here -->
+    <img src="https://hamidadib.com/api/venus.png" alt="Mars">
+    
+    
+  </div>
+  
+  
+</label>
+
+<!-- Sec Radio Button -->
+<label class="radio-container">
+  <input type="radio" name="gender" value="male">
+  
+  <div class="custom-check">
+    <img src="https://hamidadib.com/api/mars.png" alt="Mars">
+    
+    
+  </div>
+ 
+</label>
+
+<!-- 3th Radio Button -->
+<label class="radio-container">
+  <input type="radio" name="gender" value="transgender">
+  
+  <div class="custom-check" style="margin-left: -100px;">
+    <img src="https://hamidadib.com/api/intersex.png" alt="Intersex">
+    
+    
+  </div>
+  
+</label>
+
+
+
+
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>  
+  <fieldset>
+    <h2 class="fs-title">Contact Details</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input type="number" name="phno" placeholder="+91" />
+    <input type="text" name="city" placeholder="Eg.chennai" />
+    <textarea name="address" placeholder="Address"></textarea> 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="submit" name="submit" class="submit action-button" value="Submit" />
   </fieldset>
+  
 </form>
         
         

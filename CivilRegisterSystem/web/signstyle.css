@@ -59,13 +59,13 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;
-	color: #2C3E50;
+	color: #881c2f;
 	font-size: 13px;
 }
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #27AE60;
+	background: #881c2f;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
@@ -75,13 +75,13 @@ body {
 	margin: 10px 5px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #881c2f;
 }
 /*headings*/
 .fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #2C3E50;
+	color: #881c2f;
 	margin-bottom: 10px;
 }
 .fs-subtitle {
@@ -113,7 +113,7 @@ body {
 	line-height: 20px;
 	display: block;
 	font-size: 10px;
-	color: #333;
+	color: #881c2f;
 	background: white;
 	border-radius: 3px;
 	margin: 0 auto 5px auto;
@@ -136,10 +136,61 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #27AE60;
+	background: #881c2f;
 	color: white;
 }
 
 
 
+/* Radio buttons !*/
 
+
+
+.radio-containe {
+  position: relative;
+}
+
+.radio-container input{
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container input:checked ~ .custom-check {
+  background-color: transparent;
+  border: 4px solid #881c2f;
+  opacity: 1;
+  
+}
+
+
+
+
+.custom-check {
+  position: absolute;
+
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 3px;
+  left: 50%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+.custom-check img {
+  position: absolute;
+  color: white;
+  width: 20px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
