@@ -1,8 +1,11 @@
+package javadepen;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 
 import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
@@ -17,10 +20,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import DatabasePOJO.*;
+
 
 /**
  *
- * @author sirish
+ * @author Ravibalg
  */
 public class Register_DB extends HttpServlet {
 
@@ -44,9 +49,11 @@ public class Register_DB extends HttpServlet {
             out.println("<title>Servlet Register_DB</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<h1>Servlet Register_DB at " + request.getContextPath() + "</h1>");
             
             
-                     
+            
+             
             String email = request.getParameter("email");
             String pass = request.getParameter("pass");
             String cpass = request.getParameter("cpass");
@@ -57,23 +64,30 @@ public class Register_DB extends HttpServlet {
             String phno = request.getParameter("phno");
             String address = request.getParameter("address");
             
-            UserDetails userDetails = new UserDetails(email, pass, cpass, fname, lname,gender, city, phno, address);
+            UserReg userReg = new UserReg(email, pass, fname, lname, phno, address);
+            UserGender userGender = new UserGender(email, gender);
+            UserLoc userLoc = new UserLoc(address, city,null,null,null);
             
             MongoClient mongo = new MongoClient("localhost", 27017 ); 
             
             DB db = mongo.getDB("CivilDB");
             
-            DBCollection dBCollection = db.getCollection("UserList");
+            DBCollection colUserReg = db.getCollection("UserReg");
+            DBCollection colUserGender = db.getCollection("UserGender");
+            DBCollection colUserLoc = db.getCollection("UserLoc");
+            
             
             BasicDBObject whereQuery = new BasicDBObject();
             whereQuery.put("email", email);
-            DBCursor cursor = dBCollection.find(whereQuery);
+                DBCursor cursor = colUserReg.find(whereQuery);
             if(!cursor.hasNext()) {
-            out.println("DB connectied");
             Gson gson = new Gson();
-            out.println("Converted");
-            BasicDBObject obj = (BasicDBObject)JSON.parse(gson.toJson(userDetails));
-            dBCollection.insert(obj);
+            BasicDBObject objUserReg = (BasicDBObject)JSON.parse(gson.toJson(userReg));
+            BasicDBObject objUserGender = (BasicDBObject)JSON.parse(gson.toJson(userGender));
+            BasicDBObject objUserLoc = (BasicDBObject)JSON.parse(gson.toJson(userLoc));
+            colUserReg.insert(objUserReg);
+            colUserGender.insert(objUserGender);
+            colUserLoc.insert(objUserLoc);
             }
             else{
                 response.setContentType("text/html");  
@@ -81,8 +95,7 @@ public class Register_DB extends HttpServlet {
                 out.println("alert('Already exisits');");  
                 out.println("</script>");
             }
-
-            
+            out.println("I GOtiT!\n-MongoDB");
             out.println("</body>");
             out.println("</html>");
         }

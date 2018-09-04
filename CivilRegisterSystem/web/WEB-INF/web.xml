@@ -2,11 +2,19 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>Register_DB</servlet-name>
-        <servlet-class>Register_DB</servlet-class>
+        <servlet-class>javadepen.Register_DB</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BirthReg_DB</servlet-name>
+        <servlet-class>javadepen.BirthReg_DB</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Register_DB</servlet-name>
         <url-pattern>/Register_DB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BirthReg_DB</servlet-name>
+        <url-pattern>/BirthReg_DB</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

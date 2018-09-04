@@ -17,7 +17,7 @@
     </head>    
     <body>
       <h1 style="color: white">Ravi Topper !!</h1>
-      <form id="msform" action ="/CivilRegisterSystem/logincheck"> 
+      <form id="msform" action ="/CivilRegisterSystem/Login"> 
           <fieldset>
     <h2 class="fs-title">Login</h2>
     <h3 class="fs-subtitle">Find comfort in the chaos.</h3>
