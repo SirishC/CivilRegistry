@@ -187,6 +187,31 @@ html, body {
   height:46px;  
   cursor:pointer;  
 }
+.feed{
+    position: absolute;
+    top:240px;
+    padding: 100px 100px;
+    color : whitesmoke;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 100%;
+}
+
+.feeds{
+                line-height: 28px;
+                font-family: 'Nanum Gothic', sans-serif;
+                font-size: 15px;
+                
+            }
+
+.news{
+    position: absolute;
+    top:100px;
+    padding: 200px 90px;
+    color : whitesmoke;
+    font-family:  'Nanum Gothic', sans-serif;
+    font-size: 150%;
+}
+
 
 
 

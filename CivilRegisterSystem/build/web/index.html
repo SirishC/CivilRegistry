@@ -14,6 +14,32 @@ and open the template in the editor.
     </head>
     <body>
         <script src="frontjs.js"></script>
+        <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("https://www.indiatoday.in/rss/home");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode("* "+entry.title));
+            div.className = "feeds";
+            container.appendChild(div);
+                
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
+
         <p class="name">Civil Registry System</p>
         <div id="mainNavBtn">
   <div class="BtnBg"></div>
@@ -27,5 +53,8 @@ and open the template in the editor.
     <a href="/CivilRegisterSystem/contact.html">Contact</a>
   </div>
 </div>
+        <h3 class ="news">Todays NEWS headline</h3><br>
+        <div id="feed" class="feed"></div>
+        
     </body>
 </html>

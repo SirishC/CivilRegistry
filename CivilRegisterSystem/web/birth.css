@@ -1,0 +1,152 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 Sep, 2018, 5:48:41 PM
+    Author     : sirish
+*/
+
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+
+
+html {
+	height: fit-content;
+        width: fit-content;
+	/*Image only BG fallback*/
+	
+	/*background = gradient + image pattern combo*/
+	background: 
+		linear-gradient(rgba(0, 0, 0,1),rgba(115,39,47,1));
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {               
+	width: fit-content;
+        left: 200px;
+	text-align:left;
+	position: relative;
+        
+        
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width:150%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+ #msform  {
+     padding: 20px;	
+
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #881c2f;
+	font-size: 13px;
+	
+}
+input{
+    left: 20px;
+    padding: 5px;
+    padding-left:20px;  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: montserrat;
+    box-sizing: border-box;
+    color: #881c2f;
+    font-size: 13px;
+    
+    
+}
+p{
+    text-align: left;
+}
+textarea{
+    padding: 5px;  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: montserrat;
+    box-sizing: border-box;
+    color: #881c2f;
+    margin-bottom: 10px;
+    font-size: 13px;    
+    
+}
+/*buttons*/
+.action-button{
+    text-align:center;
+}
+#msform .action-button {
+	width: 100px;
+	background: #881c2f;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+        text-align: center;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #881c2f;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #881c2f;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+label{
+    left: 20px;
+    padding: 5px;
+    padding-left:20px;  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: montserrat;
+    box-sizing: border-box;
+    color: #881c2f;
+    font-size: 13px;
+}
+
+.dropdown{
+    left: 20px;
+    padding: 5px;
+    padding-left:20px;  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: montserrat;
+    box-sizing: border-box;
+    color: #881c2f;
+    font-size: 13px;
+    display: inline-block; 
+    transition: all 300ms linear;
+    
+    
+}

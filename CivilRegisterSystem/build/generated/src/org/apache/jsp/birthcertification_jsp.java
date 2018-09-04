@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class birthcertification_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,28 +48,36 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Login</title>\n");
-      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"signstyle.css\" media=\"all\" />         \n");
-      out.write("        <script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>\n");
-      out.write("        <script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js\"></script>\n");
-      out.write("\n");
-      out.write("    </head>    \n");
+      out.write("        <title>Birth Certification</title>\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"birth.css\" media=\"all\" />\n");
+      out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("      <h1 style=\"color: white\">Ravi Topper !!</h1>\n");
-      out.write("      <form id=\"msform\" action =\"/CivilRegisterSystem/logincheck\"> \n");
-      out.write("          <fieldset>\n");
+      out.write("        <script src=\"birth.js\"></script>\n");
+      out.write("        <h1>Ravi Topper !</h1>\n");
+      out.write("       <form id=\"msform\" action =\"/CivilRegisterSystem/logincheck\"> \n");
+      out.write("         <fieldset>\n");
       out.write("    <h2 class=\"fs-title\">Login</h2>\n");
       out.write("    <h3 class=\"fs-subtitle\">Find comfort in the chaos.</h3>\n");
       out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />    \n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" /><input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    <input type=\"email\" name=\"email\" placeholder=\"Email\" />\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("    \n");
       out.write("    <input type=\"password\" name=\"pass\" placeholder=\"Password\" />\n");
       out.write("    <input type=\"submit\" name=\"submit\" class=\"submit action-button\" value=\"Login\" />\n");
       out.write("  </fieldset>   \n");
       out.write("</form>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        <script src=\"signjs.js\"></script>\n");
-      out.write("            \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
