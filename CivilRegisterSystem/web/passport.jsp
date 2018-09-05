@@ -19,10 +19,16 @@
         <link rel="stylesheet" type="text/css" href="birth.css" media="all" />
     </head>
     <body>
-        <script src="birth.js"></script>
-        <h1 style='color: white'>Ravi Topper !</h1>
-       <form id="msform" action ="/CivilRegisterSystem/logincheck"> 
+        <script src="birth.js"></script>     
+       <form id="msform" action ="/CivilRegisterSystem/PassportReg_DB"> 
          <fieldset>
+             
+             <%
+            String email = (String)session.getAttribute("email");
+            
+        %>
+        
+             <input type="hidden" name="email" value=<%=email%>>
     <h2 class="fs-title">Passport Registration</h2>    
     <p>Name</p>
     <input type="text" name="fname" placeholder="First Name" />
@@ -35,19 +41,19 @@
                 <option value="female">Female</option>
                 <option value="other">Other</option></select><br>                 
     <p>Marital Status</p>
-    <select name="maritalstatus" class="dropdown"><br>
+    <select name="maritalstat" class="dropdown"><br>
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
                 <option value="Divocee">Divocee</option>
                 <option value="Widowed">Widowed</option></select><br> 
     <p>Marital Status</p>
-    <select name="maritalstatus" class="dropdown"><br>
+    <select name="emplomentstat" class="dropdown"><br>
                 <option value="employee">Employee</option>
                 <option value="selfemployee">Self Employee</option>
                 <option value="worker">Worker</option>
                 <option value="unemployed">Unemployed</option></select><br> 
     <p>Educational Qualification</p>
-    <input type="text" name="edu" placeholder="Educational Qualification" /><br>
+    <input type="text" name="eduqual" placeholder="Educational Qualification" /><br>
     <p>Parents</p>
     <input type="text" name="fathername" placeholder="Father' Name " /><br>        
     <input type="text" name="mothername" placeholder="Mother Name " /><br>

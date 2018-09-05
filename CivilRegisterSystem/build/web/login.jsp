@@ -15,8 +15,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     </head>    
-    <body>
-      <h1 style="color: white">Ravi Topper !!</h1>
+    <body>      
       <form id="msform" action ="/CivilRegisterSystem/Login"> 
           <fieldset>
     <h2 class="fs-title">Login</h2>

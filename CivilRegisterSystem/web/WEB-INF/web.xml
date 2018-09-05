@@ -8,6 +8,10 @@
         <servlet-name>BirthReg_DB</servlet-name>
         <servlet-class>javadepen.BirthReg_DB</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PassportReg_DB</servlet-name>
+        <servlet-class>javadepen.PassportReg_DB</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register_DB</servlet-name>
         <url-pattern>/Register_DB</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>BirthReg_DB</servlet-name>
         <url-pattern>/BirthReg_DB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PassportReg_DB</servlet-name>
+        <url-pattern>/PassportReg_DB</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

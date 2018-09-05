@@ -18,8 +18,7 @@
     </head>
     <body>
        
-     
-        <h1s style="color: white">Ravi Balaji Topper !!<h1>
+             
         <!-- multistep form -->
 <form id="msform" action ="/CivilRegisterSystem/Register_DB">
   <!-- progressbar -->

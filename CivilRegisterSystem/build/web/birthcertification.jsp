@@ -14,13 +14,12 @@
     </head>
     <body>
         <%
-            String email = (String)request.getAttribute("email");
+            String email = (String)session.getAttribute("email");
         %>
-        <script src="birth.js"></script>
-        <h1 style='color: white'>Ravi Topper !</h1>
+        <script src="birth.js"></script>       
        <form id="msform" action ="/CivilRegisterSystem/BirthReg_DB"> 
          <fieldset>
-             <input type="hidden" name="email" value=<%=email%>>
+             <input type="text" name="email" value=<%=email%>>
     <h2 class="fs-title">Birth Certificate</h2>    
     <p>Name</p>
     <input type="text" name="fname" placeholder="First Name" />

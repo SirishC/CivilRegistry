@@ -69,18 +69,18 @@ public class Login extends HttpServlet {
                 response.setContentType("text/html");  
                 out.println("<script type=\"text/javascript\">");  
                 out.println("alert('Password Wrong');");  
-                out.println("</script>");
+                out.println("</script>");                
             }
                  else{
                      //forward to HomePage!
                      request.setAttribute("email", email);
                      RequestDispatcher requestDispatcher = request
-                    .getRequestDispatcher("/birthcertification.jsp");
+                    .getRequestDispatcher("/user.jsp");
             requestDispatcher.forward(request, response);
 
                  }
             }
-            
+                       
             out.println(" <a href=\"/CivilRegisterSystem/login.jsp\">Login</a>");
             out.println(" <a href=\"/CivilRegisterSystem/birthcertification.jsp\">Birthcert</a>");
             
