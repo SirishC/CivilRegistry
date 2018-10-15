@@ -98,6 +98,15 @@ public class PassportReg_DB extends HttpServlet {
             colUserEduQual.insert(objUserEduQual);
             colPassportReg.insert(objPassportReg);
             
+            //update ReqForm  
+            BasicDBObject whereQuery = new BasicDBObject();
+            whereQuery.put("email", email);
+            DBCollection colRequestForm = db.getCollection("RequestForm");
+            BasicDBObject newDocument = new BasicDBObject();
+            newDocument.append("$set", new BasicDBObject().append("reqPassport", true));
+            colRequestForm.update(whereQuery, newDocument); 
+            
+            
                 
             out.println("I GOtiT!\n-MongoDB");
             out.println("</body>");

@@ -9,6 +9,13 @@
     Created on : 4 Sep, 2018, 7:14:22 PM
     Author     : sirish
 --%>
+<%@page import="java.util.List"%>
+<%@page import="com.mongodb.DBObject"%>
+<%@page import="com.mongodb.DB"%>
+<%@page import="com.mongodb.MongoClient"%>
+<%@page import="com.mongodb.DBCollection"%>
+<%@page import="com.mongodb.DBCursor"%>
+<%@page import="com.mongodb.BasicDBObject"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,7 +26,27 @@
         <link rel="stylesheet" type="text/css" href="birth.css" media="all" />
     </head>
        <%
-            String email = (String)session.getAttribute("email");
+            String email = request.getParameter("email");
+              MongoClient mongo = new MongoClient("localhost", 27017 );             
+            DB db = mongo.getDB("CivilDB");
+           
+            
+            DBObject whereQuery = new BasicDBObject();
+            whereQuery.put("email", email);            
+           DBCollection colUserEmpType = db.getCollection("UserEmpType");
+           DBCollection colUserEduQual = db.getCollection("UserEduQual");
+           DBCollection colUserMaritalStatus = db.getCollection("UserMaritalStatus");
+           DBCollection colUserGender  = db.getCollection("UserGender");
+           DBCollection colUserLoc  = db.getCollection("UserLoc");
+           DBCollection colUserReg  = db.getCollection("UserReg");
+           
+           DBObject dbobjUserReg = colUserReg.findOne(whereQuery);
+           DBObject dbobjUserEmpType = colUserEmpType.findOne(whereQuery);
+            DBObject dbobjUserEduQual = colUserEduQual.findOne(whereQuery);
+             DBObject dbobjUserMaritalStatus = colUserMaritalStatus.findOne(whereQuery);
+             DBObject whereQuery2 = new BasicDBObject();
+             //whereQuery2.put("addr", dbobjUserReg.get("addr").toString());              
+             DBObject dbobjUserLoc = colUserLoc.findOne(whereQuery2);
             
         %>
     <body>

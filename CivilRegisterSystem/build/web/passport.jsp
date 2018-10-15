@@ -18,17 +18,16 @@
         <title>PassPort</title>
         <link rel="stylesheet" type="text/css" href="birth.css" media="all" />
     </head>
+       <%
+            String email = (String)session.getAttribute("email");
+            
+        %>
     <body>
         <script src="birth.js"></script>     
        <form id="msform" action ="/CivilRegisterSystem/PassportReg_DB"> 
          <fieldset>
-             
-             <%
-            String email = (String)session.getAttribute("email");
-            
-        %>
-        
-             <input type="hidden" name="email" value=<%=email%>>
+                     
+             <input type="text" name="email" value=<%=email%>>
     <h2 class="fs-title">Passport Registration</h2>    
     <p>Name</p>
     <input type="text" name="fname" placeholder="First Name" />
@@ -46,7 +45,7 @@
                 <option value="Married">Married</option>
                 <option value="Divocee">Divocee</option>
                 <option value="Widowed">Widowed</option></select><br> 
-    <p>Marital Status</p>
+    <p>Employment Status</p>
     <select name="emplomentstat" class="dropdown"><br>
                 <option value="employee">Employee</option>
                 <option value="selfemployee">Self Employee</option>

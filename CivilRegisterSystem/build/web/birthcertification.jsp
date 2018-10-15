@@ -39,7 +39,7 @@
     <p>Address</p>
     <textarea name="address" placeholder="Address"></textarea> <br>
        <p>Hospital Name </p>
-    <input type="hospitalname" name="address" placeholder="Hospital Name" /><br>
+    <input type="text" name="hospitalname"  placeholder="Hospital Name" /><br>
     <p>Hospital Address</p>    
     <textarea name="hospitaladdress" placeholder="Hospital Address"></textarea> <br>
     <p>Delivery Time </p>

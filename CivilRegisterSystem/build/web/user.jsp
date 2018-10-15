@@ -12,13 +12,14 @@
         <title>Welcome</title>
     </head>
     <body>
-        <%
+         <%
             String email = (String)request.getAttribute("email");
             request.setAttribute("email", email);
             session.setAttribute("email", email);
+            
         %>
              <input type="hidden" name="email" value=<%=email%>>
-             <a href="/CivilRegisterSystem/login.jsp">Login</a><br>
+             <a href="/CivilRegisterSystem/login.jsp">LogOut</a><br>
              <a href="/CivilRegisterSystem/birthcertification.jsp">Birthcertification</a><br>
              <a href="/CivilRegisterSystem/passport.jsp">Passport</a><br>
         

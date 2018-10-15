@@ -6,6 +6,7 @@
 package javadepen;
 
 import DatabasePOJO.BirthBasicInfo;
+import DatabasePOJO.BirthHospital;
 import DatabasePOJO.BirthParentInfo;
 import DatabasePOJO.BirthReg;
 import com.google.gson.Gson;
@@ -74,6 +75,7 @@ public class BirthReg_DB extends HttpServlet {
             BirthBasicInfo birthBasicInfo = new BirthBasicInfo(email, fname, lname, dob);
             BirthReg birthReg = new BirthReg(email, address, hospitaladdress, deltime);
             BirthParentInfo birthParentInfo = new BirthParentInfo(email, mothername, motheroccupation, null, fathername, fatheroccupation, null);
+            BirthHospital birthHospital = new BirthHospital(hospitaladdress, hospitalname);
             
              MongoClient mongo = new MongoClient("localhost", 27017 ); 
             
@@ -82,14 +84,24 @@ public class BirthReg_DB extends HttpServlet {
             DBCollection colBirthBasicInfo = db.getCollection("BirthBasicInfo");
             DBCollection colBirthReg = db.getCollection("BirthReg");
             DBCollection colBirthParetnInfo = db.getCollection("BirthParetnInfo");
+            DBCollection colBirthHospital = db.getCollection("BirthHospital");
             
             Gson gson = new Gson();
             BasicDBObject objBirthBasicInfo = (BasicDBObject)JSON.parse(gson.toJson(birthBasicInfo));
             BasicDBObject objBirthReg = (BasicDBObject)JSON.parse(gson.toJson(birthReg));
             BasicDBObject objBirthParetnInfo = (BasicDBObject)JSON.parse(gson.toJson(birthParentInfo));
+            BasicDBObject objBasicHospital = (BasicDBObject)JSON.parse(gson.toJson(birthHospital));
             colBirthBasicInfo.insert(objBirthBasicInfo);
             colBirthReg.insert(objBirthReg);
             colBirthParetnInfo.insert(objBirthParetnInfo);
+            colBirthHospital.insert(objBasicHospital);
+            //update ReqForm
+             BasicDBObject whereQuery = new BasicDBObject();
+            whereQuery.put("email", email);
+            DBCollection colRequestForm = db.getCollection("RequestForm");
+            BasicDBObject newDocument = new BasicDBObject();
+            newDocument.append("$set", new BasicDBObject().append("reqBCer", true));         
+            colRequestForm.update(whereQuery, newDocument);       
             
             
             

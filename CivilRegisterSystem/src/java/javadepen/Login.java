@@ -40,210 +40,14 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Login</title>"); 
-            out.println("<style>/*\n" +
-"To change this license header, choose License Headers in Project Properties.\n" +
-"To change this template file, choose Tools | Templates\n" +
-"and open the template in the editor.\n" +
-"*/\n" +
-"/* \n" +
-"    Created on : 2 Sep, 2018, 5:48:41 PM\n" +
-"    Author     : sirish\n" +
-"*/\n" +
-"\n" +
-"/*custom font*/\n" +
-"@import url(https://fonts.googleapis.com/css?family=Montserrat);\n" +
-"\n" +
-"/*basic reset*/\n" +
-"* {margin: 0; padding: 0;}\n" +
-"\n" +
-"html {\n" +
-"	height: 100%;\n" +
-"	/*Image only BG fallback*/\n" +
-"	\n" +
-"	/*background = gradient + image pattern combo*/\n" +
-"	background: \n" +
-"		linear-gradient(rgba(0, 0, 0,1),rgba(115,39,47,1));\n" +
-"}\n" +
-"\n" +
-"body {\n" +
-"	font-family: montserrat, arial, verdana;\n" +
-"}\n" +
-"/*form styles*/\n" +
-"#msform {\n" +
-"	width: 400px;\n" +
-"	margin: 50px auto;\n" +
-"	text-align: center;\n" +
-"	position: relative;\n" +
-"}\n" +
-"#msform fieldset {\n" +
-"	background: white;\n" +
-"	border: 0 none;\n" +
-"	border-radius: 3px;\n" +
-"	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);\n" +
-"	padding: 20px 30px;\n" +
-"	box-sizing: border-box;\n" +
-"	width: 80%;\n" +
-"	margin: 0 10%;\n" +
-"	\n" +
-"	/*stacking fieldsets above each other*/\n" +
-"	position: relative;\n" +
-"}\n" +
-"/*Hide all except first fieldset*/\n" +
-"#msform fieldset:not(:first-of-type) {\n" +
-"	display: none;\n" +
-"}\n" +
-"/*inputs*/\n" +
-"#msform input, #msform textarea {\n" +
-"	padding: 15px;\n" +
-"	border: 1px solid #ccc;\n" +
-"	border-radius: 3px;\n" +
-"	margin-bottom: 10px;\n" +
-"	width: 100%;\n" +
-"	box-sizing: border-box;\n" +
-"	font-family: montserrat;\n" +
-"	color: #881c2f;\n" +
-"	font-size: 13px;\n" +
-"}\n" +
-"/*buttons*/\n" +
-"#msform .action-button {\n" +
-"	width: 100px;\n" +
-"	background: #881c2f;\n" +
-"	font-weight: bold;\n" +
-"	color: white;\n" +
-"	border: 0 none;\n" +
-"	border-radius: 1px;\n" +
-"	cursor: pointer;\n" +
-"	padding: 10px 5px;\n" +
-"	margin: 10px 5px;\n" +
-"}\n" +
-"#msform .action-button:hover, #msform .action-button:focus {\n" +
-"	box-shadow: 0 0 0 2px white, 0 0 0 3px #881c2f;\n" +
-"}\n" +
-"/*headings*/\n" +
-".fs-title {\n" +
-"	font-size: 15px;\n" +
-"	text-transform: uppercase;\n" +
-"	color: #881c2f;\n" +
-"	margin-bottom: 10px;\n" +
-"}\n" +
-".fs-subtitle {\n" +
-"	font-weight: normal;\n" +
-"	font-size: 13px;\n" +
-"	color: #666;\n" +
-"	margin-bottom: 20px;\n" +
-"}\n" +
-"/*progressbar*/\n" +
-"#progressbar {\n" +
-"	margin-bottom: 30px;\n" +
-"	overflow: hidden;\n" +
-"	/*CSS counters to number the steps*/\n" +
-"	counter-reset: step;\n" +
-"}\n" +
-"#progressbar li {\n" +
-"	list-style-type: none;\n" +
-"	color: white;\n" +
-"	text-transform: uppercase;\n" +
-"	font-size: 9px;\n" +
-"	width: 33.33%;\n" +
-"	float: left;\n" +
-"	position: relative;        \n" +
-"}\n" +
-"#progressbar li:before {\n" +
-"	content: counter(step);\n" +
-"	counter-increment: step;\n" +
-"	width: 20px;\n" +
-"	line-height: 20px;\n" +
-"	display: block;\n" +
-"	font-size: 10px;\n" +
-"	color: #881c2f;\n" +
-"	background: white;\n" +
-"	border-radius: 3px;\n" +
-"	margin: 0 auto 5px auto;\n" +
-"}\n" +
-"/*progressbar connectors*/\n" +
-"#progressbar li:after {\n" +
-"	content: '';\n" +
-"	width: 100%;\n" +
-"	height: 2px;\n" +
-"	background: white;\n" +
-"	position: absolute;\n" +
-"	left: -50%;\n" +
-"	top: 9px;\n" +
-"	z-index: -1; /*put it behind the numbers*/\n" +
-"}\n" +
-"#progressbar li:first-child:after {\n" +
-"	/*connector not needed before the first step*/\n" +
-"	content: none; \n" +
-"}\n" +
-"/*marking active/completed steps green*/\n" +
-"/*The number of the step and the connector before it = green*/\n" +
-"#progressbar li.active:before,  #progressbar li.active:after{\n" +
-"	background: #881c2f;\n" +
-"	color: white;\n" +
-"}\n" +
-"\n" +
-"\n" +
-"\n" +
-"/* Radio buttons !*/\n" +
-"\n" +
-"\n" +
-"\n" +
-".radio-containe {\n" +
-"  position: relative;\n" +
-"}\n" +
-"\n" +
-".radio-container input{\n" +
-"  opacity: 0;\n" +
-"  cursor: pointer;\n" +
-"}\n" +
-"\n" +
-".radio-container input:checked ~ .custom-check {\n" +
-"  background-color: transparent;\n" +
-"  border: 4px solid #881c2f;\n" +
-"  opacity: 1;\n" +
-"  \n" +
-"}\n" +
-"\n" +
-"\n" +
-"\n" +
-"\n" +
-".custom-check {\n" +
-"  position: absolute;\n" +
-"\n" +
-"  border-radius: 50%;\n" +
-"  cursor: pointer;\n" +
-"  width: 50px;\n" +
-"  height: 50px;\n" +
-"  border: none;\n" +
-"  padding: 3px;\n" +
-"  left: 50%;\n" +
-"  top: 60%;\n" +
-"  -webkit-transform: translate(-50%, -50%);\n" +
-"     -moz-transform: translate(-50%, -50%);\n" +
-"       -o-transform: translate(-50%, -50%);\n" +
-"          transform: translate(-50%, -50%);\n" +
-"}\n" +
-"\n" +
-"\n" +
-".custom-check img {\n" +
-"  position: absolute;\n" +
-"  color: white;\n" +
-"  width: 20px;\n" +
-"  left: 50%;\n" +
-"  top: 50%;\n" +
-"  -webkit-transform: translate(-50%, -50%);\n" +
-"     -moz-transform: translate(-50%, -50%);\n" +
-"       -o-transform: translate(-50%, -50%);\n" +
-"          transform: translate(-50%, -50%);\n" +
-"}</style>");
-            out.println("</head>");
-            out.println("<body>");
+         
             String email = request.getParameter("email");
             String pass = request.getParameter("pass");
+            if(email.equals("admin@admin.in") && pass.equals("admin")){
+                RequestDispatcher admin = request.getRequestDispatcher("/admin.jsp");
+                    admin.forward(request, response);
+            }
+            else{
             
             MongoClient mongo = new MongoClient("localhost",27017);
             DB db = mongo.getDB("CivilDB");
@@ -253,33 +57,151 @@ public class Login extends HttpServlet {
             DBObject dbobj = dBCollection.findOne(whereQuery);
             if(dbobj == null){
                  response.setContentType("text/html");  
-                out.println("<script type=\"text/javascript\">");  
-                out.println("alert('Account Not Found');");  
-                out.println("</script>");
+                 out.println("<html>\n" +
+"<head>\n" +
+"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+"    <title>Sign Up </title>\n" +
+"    <link href=\"https://fonts.googleapis.com/css?family=Nanum+Gothic\" rel=\"stylesheet\">\n" +
+"    <style>\n" +
+"    @import url(https://fonts.googleapis.com/css?family=Montserrat);\n" +
+"    html{\n" +
+"      height: 100%;\n" +
+"	background:\n" +
+"		linear-gradient(rgba(0, 0, 0,1),rgba(115,39,47,1));\n" +
+"    }\n" +
+"    body{\n" +
+"    padding-top: 14.5%;\n" +
+"      text-align: center;\n" +
+"      font-family: montserrat, arial, verdana;\n" +
+"    }\n" +
+"       input,textarea{\n" +
+"width: 80%;\n" +
+"padding: 12px 20px;\n" +
+"margin: 8px 0;\n" +
+"border: 1px solid #ccc;\n" +
+"border-radius: 4px;\n" +
+"box-sizing: border-box;\n" +
+"display:inline-block;\n" +
+"font-family: montserrat, arial, verdana;\n" +
+"}\n" +
+"button{\n" +
+"  padding: 10px 20px;\n" +
+"    color: black;\n" +
+"    border: 0 none;\n" +
+"    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);\n" +
+"    background: rgba(255, 235, 59, 1);\n" +
+"    font-family: montserrat, arial, verdana;\n" +
+"    border-color: black;\n" +
+"    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);\n" +
+"\n" +
+"}\n" +
+"h1{\n" +
+"  padding-top: 10%;\n" +
+"}\n" +
+"\n" +
+"form{\n" +
+"\n" +
+"  padding-top: 20%;\n" +
+"  background: white;\n" +
+"  border: 0 none;\n" +
+"  border-radius: 3px;\n" +
+"  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);\n" +
+"  padding: 50px 10px;\n" +
+"  box-sizing: border-box;\n" +
+"  margin: 0 35%;\n" +
+"  font-family: montserrat, arial, verdana;\n" +
+"\n" +
+"}\n" +
+"        </style>\n" +
+"</head>\n" +
+"   <body>\n" +
+"      <form action = \"/CivilRegisterSystem/login.jsp\">\n" +
+"        <p><b>Login Unsuccessful </b><br>The Given User Does Not Exist </p><br>\n" +
+"        <input type = \"submit\" value = \"back\">\n" +
+"      </form>\n" +
+"   </body>\n" +
+"</html>");
             }
             else{
                 String dbpass = dbobj.get("pass").toString();
                  if(!pass.equals(dbpass)){                                       
                 response.setContentType("text/html");  
-                out.println("<script type=\"text/javascript\">");  
-                out.println("alert('Password Wrong');");  
-                out.println("</script>");                
+                 out.println("<html>\n" +
+"<head>\n" +
+"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+"    <title>Sign Up </title>\n" +
+"    <link href=\"https://fonts.googleapis.com/css?family=Nanum+Gothic\" rel=\"stylesheet\">\n" +
+"    <style>\n" +
+"    @import url(https://fonts.googleapis.com/css?family=Montserrat);\n" +
+"    html{\n" +
+"      height: 100%;\n" +
+"	background:\n" +
+"		linear-gradient(rgba(0, 0, 0,1),rgba(115,39,47,1));\n" +
+"    }\n" +
+"    body{\n" +
+"    padding-top: 14.5%;\n" +
+"      text-align: center;\n" +
+"      font-family: montserrat, arial, verdana;\n" +
+"    }\n" +
+"       input,textarea{\n" +
+"width: 80%;\n" +
+"padding: 12px 20px;\n" +
+"margin: 8px 0;\n" +
+"border: 1px solid #ccc;\n" +
+"border-radius: 4px;\n" +
+"box-sizing: border-box;\n" +
+"display:inline-block;\n" +
+"font-family: montserrat, arial, verdana;\n" +
+"}\n" +
+"button{\n" +
+"  padding: 10px 20px;\n" +
+"    color: black;\n" +
+"    border: 0 none;\n" +
+"    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);\n" +
+"    background: rgba(255, 235, 59, 1);\n" +
+"    font-family: montserrat, arial, verdana;\n" +
+"    border-color: black;\n" +
+"    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);\n" +
+"\n" +
+"}\n" +
+"h1{\n" +
+"  padding-top: 10%;\n" +
+"}\n" +
+"\n" +
+"form{\n" +
+"\n" +
+"  padding-top: 20%;\n" +
+"  background: white;\n" +
+"  border: 0 none;\n" +
+"  border-radius: 3px;\n" +
+"  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);\n" +
+"  padding: 50px 10px;\n" +
+"  box-sizing: border-box;\n" +
+"  margin: 0 35%;\n" +
+"  font-family: montserrat, arial, verdana;\n" +
+"\n" +
+"}\n" +
+"        </style>\n" +
+"</head>\n" +
+"   <body>\n" +
+"      <form action = \"/CivilRegisterSystem/login.jsp\">\n" +
+"        <p><b>Login Unsuccessful </b><br>Username or Password Incorrect</p><br>\n" +
+"        <input type = \"submit\" value = \"back\">\n" +
+"      </form>\n" +
+"   </body>\n" +
+"</html>");
                     }
                  else{
                      //forward to HomePage!
-                     out.println("<h1>Welcome , Sirish </h1>");
-                     request.setAttribute("email", email);
-                     RequestDispatcher requestDispatcher = request
-                    .getRequestDispatcher("/user.jsp");
-            requestDispatcher.forward(request, response);
-            out.println("<form><form>");
-                                           
+//                     String fname = dbobj.get("fname").toString();
+//                     String lname = dbobj.get("lname").toString();
+//                     out.println("<h1>Welcome , "+fname+" "+lname+"</h1>");
+                     request.setAttribute("email", email);   
+                     RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user.jsp");
+                                       requestDispatcher.forward(request, response);
                  }
-            }
-
-            
-            out.println("</body>");
-            out.println("</html>");
+            }           
+        }
         }
     }
 
@@ -323,3 +245,7 @@ public class Login extends HttpServlet {
     }// </editor-fold>
 
 }
+
+
+
+

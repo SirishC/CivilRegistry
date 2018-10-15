@@ -13,13 +13,13 @@ public class BirthReg {
 
 private String email;
 private String addr;
-private String hhospitaladdr;
+private String hospitaladdr;
 private String delTime;
 
-    public BirthReg(String email, String addr, String hhospitaladdr, String delTime) {
+    public BirthReg(String email, String addr, String hospitaladdr, String delTime) {
         this.email = email;
         this.addr = addr;
-        this.hhospitaladdr = hhospitaladdr;
+        this.hospitaladdr = hospitaladdr;
         this.delTime = delTime;
     }
 
