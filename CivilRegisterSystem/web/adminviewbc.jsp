@@ -70,7 +70,7 @@
            
         %>
         <script src="birth.js"></script>       
-       <form id="msform" action ="/CivilRegisterSystem/BirthReg_DB"> 
+       <form id="msform" > 
          <fieldset>
              <input type="text" name="email" value=<%=email%>>
     <h2 class="fs-title">Birth Certificate</h2>    
@@ -97,8 +97,9 @@
     <textarea name="hospitaladdress"   readonly><%=mhospitaladdr%></textarea> <br>
     <p>Delivery Time </p>
     <input type="text" name="deltime"  value=<%=mdelTime%> readonly/><br>
-    <input type="submit" name="submit" class="action-button" value="Approve" />
-    <input type="submit" name="submit" class="action-button" value="DisApprove" />
+    <input type="submit" name="submit" class="action-button" formaction="/CivilRegisterSystem/AdminVerified" value="Approve" />
+    <input type="submit" name="submit" class="action-button" formaction="/CivilRegisterSystem/AdminDisApproved" value="DisApprove" />
+    <input type="hidden" name="whatverified" value="birthcert">
   </fieldset>   
 </form>
     </body>

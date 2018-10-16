@@ -111,9 +111,10 @@
     <input type="text" name="por" value=<%=mplace%> readonly /><br>   
     <p>Date of Registration </p>
     <input type="text" name="dor"value=<%=mdate%> readonly/><br>
-    <input type="submit" name="submit" class="action-button" value="Approve" />
-    <input type="submit" name="submit" class="action-button" value="DisApprove" />
-    
+    <input type="submit" name="submit" class="action-button" formaction="/CivilRegisterSystem/AdminVerified" value="Approve" />
+    <input type="submit" name="submit" class="action-button" formaction="/CivilRegisterSystem/AdminDisApproved" value="DisApprove" />
+    <input type="hidden" name="whatverified" value="passport">
+
   </fieldset>   
 </form>
     </body>

@@ -4,6 +4,8 @@
     Author     : Ravibalg
 --%>
 
+<%@page import="com.google.gson.Gson"%>
+<%@page import="DatabasePOJO.DeathReg"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mongodb.DBObject"%>
 <%@page import="com.mongodb.DB"%>
@@ -101,6 +103,9 @@ button{
             
             DB db = mongo.getDB("CivilDB");
            DBCollection colReqForm = db.getCollection("RequestForm");
+           DBCollection colUserReg = db.getCollection("UserReg");
+           DBCollection colDeathReg = db.getCollection("DeathReg");
+           
 
  //BirthCert!          
            BasicDBObject whereQuery = new BasicDBObject();  
@@ -147,7 +152,34 @@ button{
             }
            out.println("</table>");
 
+         
+           
+
+        //ListofUsers
+           DBCursor cursor2 = colUserReg.find();
+           List<DBObject> listUsers = cursor2.toArray();
+           out.println("<table id=\"user\">");
+           out.println("<tr>\n" +
+                "    <th><center><b>List of Users<br>Email</center></th>\n" +
+                "  </tr>");
+           
+           for(int i=0;i<listUsers.size();i++){
+               
+               String emailid = listUsers.get(i).get("email").toString();               
+               DBObject whereQuery2 = new BasicDBObject();
+            whereQuery2.put("email", emailid);
+            Gson gson = new Gson();
+            DBObject dbobj = colDeathReg.findOne(whereQuery2);
+            if(dbobj != null )
+                continue;                      
+            out.println("<tr>\n" +
+                "<td>"+ "<a href=\"createDeathCert.jsp?email=" + emailid +"\">" + emailid + "</a>" +       
+                "</td>\n" +
+                "</tr>");
+            
+            }
            out.println("</table>");
+
 
            
 %>
