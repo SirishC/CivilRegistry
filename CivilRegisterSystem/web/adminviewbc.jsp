@@ -66,7 +66,7 @@
              //UserReg
              String mgender = dbobjUserGender.get("gender").toString();
              //UserLoc
-             String mcity = dbobjUserLoc.get("city").toString();
+             String mcity = dbobjUserLoc.get("city").toString();             
            
         %>
         <script src="birth.js"></script>       
@@ -98,7 +98,7 @@
     <p>Delivery Time </p>
     <input type="text" name="deltime"  value=<%=mdelTime%> readonly/><br>
     <input type="submit" name="submit" class="action-button" value="Approve" />
-    <input type="submit" name="submit" class="action-button" value="Disapprove" />
+    <input type="submit" name="submit" class="action-button" value="DisApprove" />
   </fieldset>   
 </form>
     </body>
