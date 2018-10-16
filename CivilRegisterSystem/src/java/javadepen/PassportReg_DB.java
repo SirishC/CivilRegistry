@@ -99,6 +99,9 @@ public class PassportReg_DB extends HttpServlet {
             BasicDBObject newDocument = new BasicDBObject();
             newDocument.append("$set", new BasicDBObject().append("reqPassport", true));
             colRequestForm.update(whereQuery, newDocument); 
+            BasicDBObject newDocument1 = new BasicDBObject();
+            newDocument1.append("$set", new BasicDBObject().append("errPassport", true));
+            colRequestForm.update(whereQuery, newDocument1); 
             
             
 // Page Display !!
@@ -162,6 +165,7 @@ public class PassportReg_DB extends HttpServlet {
 "   <body>\n" +
 "      <form action = \"/CivilRegisterSystem/user.jsp\">\n" +
 "        <p><b>Passport</b><br>Successfully Applied</p><br>\n" +
+"       <input type=\"hidden\" name=\"getemail\" value=\""+email+"\" />"+
 "        <input type = \"submit\" value = \"back\">\n" +
 "      </form>\n" +
 "   </body>\n" +

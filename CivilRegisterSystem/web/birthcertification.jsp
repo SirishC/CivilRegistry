@@ -10,11 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Birth Certification</title>
-        <link rel="stylesheet" type="text/css" href="birth.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="birth.css" media="all" />        
     </head>
     <body>
         <%
-            String email = (String)session.getAttribute("email");
+            String email = request.getParameter("email");
         %>
         <script src="birth.js"></script>       
        <form id="msform" action ="/CivilRegisterSystem/BirthReg_DB"> 

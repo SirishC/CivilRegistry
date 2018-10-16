@@ -54,9 +54,11 @@ public class Register_DB extends HttpServlet {
             String phno = request.getParameter("phno");
             String address = request.getParameter("address");
             
+            
             UserReg userReg = new UserReg(email, pass, fname, lname, phno, address);
             UserGender userGender = new UserGender(email, gender);
             UserLoc userLoc = new UserLoc(address, city,null,null,null);
+            DeathReg deathReg = new DeathReg(email,false);
             RequestForm requestForm = new RequestForm(email, false, false, false, false,false,false);
             MongoClient mongo = new MongoClient("localhost", 27017 ); 
             
@@ -66,13 +68,17 @@ public class Register_DB extends HttpServlet {
             DBCollection colUserGender = db.getCollection("UserGender");
             DBCollection colUserLoc = db.getCollection("UserLoc");
             DBCollection colReqForm = db.getCollection("RequestForm");
+            DBCollection colDeathReg = db.getCollection("DeathReg");
             
             
             BasicDBObject whereQuery = new BasicDBObject();
             whereQuery.put("email", email);
                 DBCursor cursor = colUserReg.find(whereQuery);
             if(!cursor.hasNext()) {
-            Gson gson = new Gson();
+                Gson gson = new Gson();
+            
+                
+            BasicDBObject objDeathReg = (BasicDBObject)JSON.parse(gson.toJson(deathReg));    
             BasicDBObject objUserReg = (BasicDBObject)JSON.parse(gson.toJson(userReg));
             BasicDBObject objUserGender = (BasicDBObject)JSON.parse(gson.toJson(userGender));
             BasicDBObject objUserLoc = (BasicDBObject)JSON.parse(gson.toJson(userLoc));
@@ -81,6 +87,7 @@ public class Register_DB extends HttpServlet {
             colUserGender.insert(objUserGender);
             colUserLoc.insert(objUserLoc);
             colReqForm.insert(objReqForm);
+            colDeathReg.insert(objDeathReg);
             out.println("<html>\n" +
 "<head>\n" +
 "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +

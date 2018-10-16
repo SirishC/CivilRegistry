@@ -19,6 +19,34 @@ public class RequestForm {
    private boolean errBCer = false;
    private boolean errPassport = false;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public boolean isReqBCer() {
+        return reqBCer;
+    }
+
+    public boolean isReqPassport() {
+        return reqPassport;
+    }
+
+    public boolean isVerBCer() {
+        return verBCer;
+    }
+
+    public boolean isVerPassport() {
+        return verPassport;
+    }
+
+    public boolean isErrBCer() {
+        return errBCer;
+    }
+
+    public boolean isErrPassport() {
+        return errPassport;
+    }
+
     public RequestForm(String email,boolean reqBCer,boolean reqPassport,boolean verBCer,boolean verPassport,boolean errBCer,boolean errPassport) {
         this.email = email;
         this.reqBCer = reqBCer;

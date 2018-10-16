@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="birth.css" media="all" />
     </head>
        <%
-            String email = (String)session.getAttribute("email");
+            String email = request.getParameter("email");
             
         %>
     <body>

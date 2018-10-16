@@ -95,7 +95,9 @@ public class BirthReg_DB extends HttpServlet {
             BasicDBObject newDocument = new BasicDBObject();
             newDocument.append("$set", new BasicDBObject().append("reqBCer", true));         
             colRequestForm.update(whereQuery, newDocument);       
-            
+            BasicDBObject newDocument1 = new BasicDBObject();
+            newDocument1.append("$set", new BasicDBObject().append("errBCer", false));         
+            colRequestForm.update(whereQuery, newDocument1);
             
           // Page Display !!
           out.println("<html>\n" +
@@ -157,7 +159,8 @@ public class BirthReg_DB extends HttpServlet {
 "</head>\n" +
 "   <body>\n" +
 "      <form action = \"/CivilRegisterSystem/user.jsp\">\n" +
-"        <p><b>BirthCertificate</b><br>Successfully Applied</p><br>\n" +
+"        <p><b>BirthCertificate</b><br>Successfully"+email+"Applied</p><br>\n" +
+"       <input type=\"hidden\" name=\"getemail\" value=\""+email+"\" />"+
 "        <input type = \"submit\" value = \"back\">\n" +
 "      </form>\n" +
 "   </body>\n" +

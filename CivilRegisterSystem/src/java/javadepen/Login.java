@@ -197,8 +197,11 @@ public class Login extends HttpServlet {
 //                     String lname = dbobj.get("lname").toString();
 //                     out.println("<h1>Welcome , "+fname+" "+lname+"</h1>");
                      request.setAttribute("email", email);   
-                     RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user.jsp");
-                                       requestDispatcher.forward(request, response);
+                     request.getRequestDispatcher("/user.jsp").forward(request, response);
+                                          
+                     
+//                     RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user.jsp");
+//                                       requestDispatcher.forward(request, response);
                  }
             }           
         }

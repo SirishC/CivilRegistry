@@ -165,13 +165,14 @@ button{
            
            for(int i=0;i<listUsers.size();i++){
                
-               String emailid = listUsers.get(i).get("email").toString();               
+               String emailid = listUsers.get(i).get("email").toString();                 
                DBObject whereQuery2 = new BasicDBObject();
             whereQuery2.put("email", emailid);
             Gson gson = new Gson();
             DBObject dbobj = colDeathReg.findOne(whereQuery2);
-            if(dbobj != null )
-                continue;                      
+            if(dbobj.get("dead").toString() == "true" ){                
+                continue;  
+            }
             out.println("<tr>\n" +
                 "<td>"+ "<a href=\"createDeathCert.jsp?email=" + emailid +"\">" + emailid + "</a>" +       
                 "</td>\n" +

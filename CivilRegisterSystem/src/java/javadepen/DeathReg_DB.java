@@ -53,10 +53,12 @@ public class DeathReg_DB extends HttpServlet {
             
             DB db = mongo.getDB("CivilDB");
             DBCollection colDeathReg = db.getCollection("DeathReg");
-            DeathReg deathReg = new DeathReg(email,true);
-            Gson gson = new Gson();
-            BasicDBObject objDeathReg = (BasicDBObject)JSON.parse(gson.toJson(deathReg));
-            colDeathReg.insert(objDeathReg);
+          
+            BasicDBObject whereQuery = new BasicDBObject();
+            whereQuery.put("email", email);
+            BasicDBObject newDocument1 = new BasicDBObject();
+            newDocument1.append("$set", new BasicDBObject().append("dead", true));         
+            colDeathReg.update(whereQuery, newDocument1);
             
             //Deletion
         DBCollection colRequestForm = db.getCollection("RequestForm");
@@ -123,7 +125,7 @@ public class DeathReg_DB extends HttpServlet {
 "</head>\n" +
 "   <body>\n" +
 "      <form action = \"/CivilRegisterSystem/admin.jsp\">\n" +
-"        <p><b>Successfully Killed </b><br> User : "+email+" deleted </p><br>\n" +
+"        <p><b>Successfully Removed the  </b><br> User : "+email+"</p><br>\n" +
 "        <input type = \"submit\" value = \"back\">\n" +
 "      </form>\n" +
 "   </body>\n" +

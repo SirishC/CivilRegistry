@@ -175,6 +175,7 @@ public final class adminviewbc_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(" readonly/><br>\n");
       out.write("    <input type=\"submit\" name=\"submit\" class=\"action-button\" formaction=\"/CivilRegisterSystem/AdminVerified\" value=\"Approve\" />\n");
       out.write("    <input type=\"submit\" name=\"submit\" class=\"action-button\" formaction=\"/CivilRegisterSystem/AdminDisApproved\" value=\"DisApprove\" />\n");
+      out.write("    <input type=\"hidden\" name=\"whatverified\" value=\"birthcert\">\n");
       out.write("  </fieldset>   \n");
       out.write("</form>\n");
       out.write("    </body>\n");
